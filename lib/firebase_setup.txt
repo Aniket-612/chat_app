@@ -1,0 +1,27 @@
+1. create a chat_app space in firebase
+2. firebase->users-> authentication - email 
+3. add a user to email in email users
+4. go in the terminal of our project and entered "npm install -g firebase-tools"
+5. "firebase login" in terminal
+6."flutter pub global activate flutterfire_cli" in terminal
+7. If this link appears in the terminal "C:\Users\Aniket\AppData\Local\Pub\Cache\bin" and errpr 
+    try this:
+    Open the Windows Search Bar, type in “env”, and choose “Edit the system environment variables”
+    Click the “Environment Variables…”
+    In System Variables box, search for "PATH" and double click on it
+    Click "New" and then paste the following line, replacing *USERNAME* with your Windows username
+    C:\Users\*USERNAME*\AppData\Local\Pub\Cache\bin
+    Click Ok and restart your IDE, then try flutterfire commands
+8.flutterfire configure
+    if this happens
+        PS C:\Users\Aniket\Desktop\Flutter\chat_app> flutterfire configure
+        Error: Unable to find git in your PATH. 
+    do "git config --global --add safe.directory C:/tools/dart-sdk"
+    then flutterfire configure
+9.select optionn "web " then
+10.flutter pub add firebase_core
+   flutter pub add firebase_auth
+
+11. change void main() to void main() async and also add 
+            WidgetsFlutterBinding.ensureInitialized();
+            await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform );
